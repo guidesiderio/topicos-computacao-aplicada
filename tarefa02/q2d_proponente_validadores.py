@@ -1,6 +1,10 @@
+import os
+from dotenv import load_dotenv
 from web3 import Web3
 
-URL = "https://eth-mainnet.g.alchemy.com/v2/X3pY9VndnAbHRaCnF16ze"
+load_dotenv()
+
+URL = f"https://eth-mainnet.g.alchemy.com/v2/{os.getenv('ALCHEMY_API_KEY')}"
 w3 = Web3(Web3.HTTPProvider(URL))
 
 # Mesmo bloco das questões anteriores
